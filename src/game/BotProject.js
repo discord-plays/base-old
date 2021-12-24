@@ -17,7 +17,7 @@ const baseDefaultGuildSettings = {
 };
 
 class BotProject {
-  constructor(client, server, options) {
+  constructor(client, server, options, loadedTexturepackKlass) {
     var $t = this;
     this.menuController = new MenuController();
     this.starttime = new Date();
@@ -33,7 +33,7 @@ class BotProject {
 
     this.defaultGuildSettings = { ...baseDefaultGuildSettings, ...this.jsonfile.defaultGuildSettings };
 
-    this.__assets = new Assets(this.basedir);
+    this.__assets = new Assets(this.basedir, loadedTexturepackKlass);
     let loadingAssets = this.__assets.load().then(() => {
       console.log("Loaded assets list");
       $t.loadedresources++;

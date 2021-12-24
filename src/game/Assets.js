@@ -3,8 +3,9 @@ const Globber = require("./Globber");
 const Texturepack = require("./Texturepack");
 
 class Assets extends Globber {
-  constructor(basedir) {
+  constructor(basedir, loadedTexturepackKlass) {
     this.basedir = basedir;
+    this.loadedTexturepackKlass = loadedTexturepackKlass;
     this.packs = [];
     this.import("%%default%%");
   }
@@ -21,7 +22,7 @@ class Assets extends Globber {
   }
 
   import(path) {
-    this.packs.push(new Texturepack(this.basedir, path));
+    this.packs.push(new Texturepack(this.basedir, path, this.loadedTexturepackKlass));
   }
 
   find(name) {
