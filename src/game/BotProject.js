@@ -125,6 +125,15 @@ class BotProject {
     return Object.keys($t.__games).length;
   }
 
+  getGame(id) {
+    if (this.isGame(id)) return this.__games[id];
+    else return null;
+  }
+
+  isGame(id) {
+    return Object.keys(this.__games).includes(id);
+  }
+
   getAssets() {
     return this.__assets;
   }
@@ -176,7 +185,7 @@ class BotProject {
     let $t = this;
     const regex = /^.*?(?<id>(?:dm|[0-9]+)-[0-9]+)\.json$/g;
     return new Promise((resolve, reject) => {
-      glob(path.join($t.boardDataPath, "*.json"), (err, files) => {
+      glob(path.join($t.gameDataPath, "*.json"), (err, files) => {
         if (err) return reject();
         if (DEBUG_LOGGING) console.log(files);
         let f = [];
@@ -226,7 +235,6 @@ class BotProject {
   }
 
   processMessageCommand(receivedMessage, config) {
-    if (this.loadedresources != TotalResources) return receivedMessage.channel.send("Please wait while I finish loading my resources");
     var that = this;
     try {
       let fullCommand = receivedMessage.content.substr(config.prefix.length); // Remove the leading prefix characters
@@ -242,14 +250,13 @@ class BotProject {
       if (that.processReceivedError(err, receivedMessage)) {
         // Swap hadError flag
         let [guildId, channelId] = [receivedMessage.guild == null ? "dm" : receivedMessage.guild.id, receivedMessage.channel.id];
-        let boardId = `${guildId}-${guildId == "dm" ? receivedMessage.author.id : channelId}`;
-        if (that.isBoard(boardId)) that.getBoard(boardId).hadError = true;
+        let gameId = `${guildId}-${guildId == "dm" ? receivedMessage.author.id : channelId}`;
+        if (that.isGame(gameId)) that.getGame(gameId).hadError = true;
       }
     }
   }
 
   processInteractionCommand(receivedInteraction, config) {
-    if (this.loadedresources != TotalResources) return receivedMessage.channel.send("Please wait while I finish loading my resources");
     var that = this;
     try {
       let commandScript = that.findCommand(receivedInteraction.commandName);
@@ -261,8 +268,8 @@ class BotProject {
       if (that.processReceivedError(err, receivedInteraction)) {
         // Swap hadError flag
         let [guildId, channelId] = [receivedInteraction.guild == null ? "dm" : receivedInteraction.guild.id, receivedInteraction.channel.id];
-        let boardId = `${guildId}-${guildId == "dm" ? receivedInteraction.user.id : channelId}`;
-        if (that.isBoard(boardId)) that.getBoard(boardId).hadError = true;
+        let gameId = `${guildId}-${guildId == "dm" ? receivedInteraction.user.id : channelId}`;
+        if (that.isGame(gameId)) that.getGame(gameId).hadError = true;
       }
     }
   }
