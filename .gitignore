@@ -1,0 +1,6 @@
+# Ignore node modules folder and .env secrets file
+node_modules/
+.env
+
+# Data files/folders
+.data/

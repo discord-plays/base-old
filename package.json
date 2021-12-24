@@ -1,0 +1,36 @@
+{
+  "name": "discord-plays-base",
+  "version": "1.0.0",
+  "description": "Base building blocks for Discord Plays bots",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/discord-plays/base.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/discord-plays/base/issues"
+  },
+  "homepage": "https://github.com/discord-plays/base#readme",
+  "dependencies": {
+    "@jimp/jpeg": "^0.16.1",
+    "aggregation": "^1.2.6",
+    "body": "^5.1.0",
+    "cookie-parser": "^1.4.5",
+    "discord-oauth2-api": "^1.0.8",
+    "discord.js": "^13.0.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "glob": "^7.1.6",
+    "jimp": "^0.16.1",
+    "jpeg-js": "^0.4.1",
+    "marked": "^2.0.7",
+    "ndarray": "^1.0.19",
+    "random-seed": "^0.3.0",
+    "replace-color": "^2.3.0",
+    "set": "^1.1.1",
+    "uuid": "^8.3.2",
+    "ws": "^7.4.6"
+  }
+}

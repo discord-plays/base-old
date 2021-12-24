@@ -1,0 +1,19 @@
+module.exports = {
+  BUTTON_PENCIL:{symbol:'📝',name:':pencil:'},
+  BUTTON_O:{symbol:'⭕',name:':o:'},
+  BUTTON_MENU:{symbol:'💠',name:':diamond_shape_with_a_dot_inside:'},
+  BUTTON_PREVIOUS:{symbol:'⏮️',name:':track_previous:'},
+  BUTTON_NEXT:{symbol:'⏭️',name:':track_next:'},
+  BUTTON_NUMBERS:[
+    {symbol:'1️⃣',name:':one:'},
+    {symbol:'2️⃣',name:':two:'},
+    {symbol:'3️⃣',name:':three:'},
+    {symbol:'4️⃣',name:':four:'},
+    {symbol:'5️⃣',name:':five:'},
+    {symbol:'6️⃣',name:':six:'},
+    {symbol:'7️⃣',name:':seven:'},
+    {symbol:'8️⃣',name:':eight:'},
+    {symbol:'9️⃣',name:':nine:'},
+    {symbol:'🔟',name:':keycap_ten:'}
+  ]
+};
