@@ -39,10 +39,10 @@ function setupDiscordPlaysBot(klass, options) {
     if (bot == null) return;
     let config = bot.getPerServerSettings(guild.id.toString());
     var embed = new Discord.MessageEmbed()
-      .setColor("#292340")
-      .setAuthor("Discord Plays Minesweeper", bot.jsonfile.logoQuestion)
+      .setColor("#5334cf")
+      .setAuthor({name:klass.getName(),iconURL:bot.jsonfile.logo})
       .setTitle("Welcome")
-      .setDescription(["Thanks for inviting me to your server, here's how to get started.", `Run \`${config.prefix}start\` to create a new game`, `Run \`${config.prefix}help\` for more information`].join("\n"));
+      .setDescription(["Thanks for inviting me to your server, here's how to get started.", `Run \`${config.prefix}play\` to create a new game`, `Run \`${config.prefix}help\` for more information`].join("\n"));
 
     guild.channels.fetch().then((channels) => {
       channels = channels.filter((x) => x.isText());
@@ -75,7 +75,7 @@ function setupDiscordPlaysBot(klass, options) {
   }
 
   function shutdown() {
-    // Gracefully close and cleanup Minesweeper class
+    // Gracefully close and cleanup bot class
     bot.end();
     // Gracefully logout and terminate the Discord client
     client.destroy();

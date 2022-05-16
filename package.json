@@ -6,7 +6,24 @@
     "type": "git",
     "url": "git+https://github.com/discord-plays/base.git"
   },
-  "author": "",
+  "author": {
+    "name": "Discord Plays",
+    "email": "hello@discord-plays.xyz",
+    "url": "https://discord-plays.xyz"
+  },
+  "contributors": [
+    {
+      "name": "MrMelon54",
+      "email": "hello@mrmelon54.xyz",
+      "url": "https://mrmelon54.xyz"
+    },
+    {
+      "name": "Kikithecat12345"
+    },
+    {
+      "name": "KevinGamer790"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/discord-plays/base/issues"
@@ -14,23 +31,31 @@
   "homepage": "https://github.com/discord-plays/base#readme",
   "dependencies": {
     "@jimp/jpeg": "^0.16.1",
-    "aggregation": "^1.2.6",
+    "aggregation": "^1.2.7",
     "body": "^5.1.0",
-    "cookie-parser": "^1.4.5",
-    "discord-oauth2-api": "^1.0.8",
-    "discord.js": "^13.0.1",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "glob": "^7.1.6",
+    "cookie-parser": "^1.4.6",
+    "discord-oauth2-api": "^1.1.2",
+    "discord.js": "^13.7.0",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "glob": "^8.0.3",
     "jimp": "^0.16.1",
-    "jpeg-js": "^0.4.1",
-    "marked": "^2.0.7",
+    "jpeg-js": "^0.4.3",
+    "marked": "^4.0.15",
     "ndarray": "^1.0.19",
     "random-seed": "^0.3.0",
     "replace-color": "^2.3.0",
     "set": "^1.1.1",
     "uuid": "^8.3.2",
-    "ws": "^7.4.6"
+    "ws": "^8.6.0"
+  },
+  "overrides": {
+    "replace-color": {
+      "@jimp/jpeg": "$@jimp/jpeg"
+    },
+    "jpeg-js": {
+      "@jimp/jpeg": "$@jimp/jpeg"
+    }
   }
 }
