@@ -4,6 +4,7 @@ const Texturepack = require("./Texturepack");
 
 class Assets extends Globber {
   constructor(basedir, loadedTexturepackKlass) {
+    super(basedir,"*/");
     this.basedir = basedir;
     this.loadedTexturepackKlass = loadedTexturepackKlass;
     this.packs = [];
