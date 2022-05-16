@@ -54,7 +54,7 @@ class BotProject {
 
     this.modLoader = new ModLoader(this, this.basedir);
     let loadingMods = this.modLoader.load().then(() => {
-      loaded_mods();
+      console.log("Finished loading mods...");
     });
 
     Promise.all([loadingAssets, loadingCommands, loadingMissions, loadingMods]).then((x) => {
